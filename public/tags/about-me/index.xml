@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>About Me on RMonaghan</title>
+    <link>https://rmonaghan.com/tags/about-me/</link>
+    <description>Recent content in About Me on RMonaghan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 31 Jan 2023 20:32:35 -0600</lastBuildDate><atom:link href="https://rmonaghan.com/tags/about-me/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hello World</title>
+      <link>https://rmonaghan.com/post/hello-world/</link>
+      <pubDate>Tue, 31 Jan 2023 20:32:35 -0600</pubDate>
+      
+      <guid>https://rmonaghan.com/post/hello-world/</guid>
+      <description>Hello World One of my goals for 2023 is to start a professional site/blog as I continue my journey as Software Developer. The main goal of this blog is to do more learning in public and to share what I learn with the people who find this blog.
+WhoAmI My name is Ryan Monaghan I&amp;rsquo;m currently a software engineer who primarily focuses on C#. I&amp;rsquo;ve been a software developer for about 3 years and before that, I taught High School Computer Science.</description>
+    </item>
+    
+  </channel>
+</rss>
