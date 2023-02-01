@@ -24,7 +24,3 @@ custom_css = ["static/css/custom.css"]
   background_color_class = "bg-black"
   recent_posts_number = 3
 
-[[params.ananke_socials]]
-name = "mastodon"
-url = "https://mastodon.social/@rmonaghan"
-rel = "me"
