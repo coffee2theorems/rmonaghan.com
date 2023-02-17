@@ -10,7 +10,6 @@ draft: false
 ## Hello World
 
 One of my goals for 2023 is to start a professional site/blog as I continue my journey as Software Developer. The main goal of this blog is to do more learning in public and to share what I learn with the people who find this blog.
-I would also like to set up some sort of CD pipeline using github actions.
 
 ## WhoAmI
 
