@@ -50,7 +50,7 @@ jobs:
         run: |
           echo "$ssh_key" > ~/ssh_key
           chmod 600 ~/ssh_key
-          rsync -e "ssh -i ~/ssh_key -o StrictHostKeyChecking=no" -avzr ./public/ "$user"@"$target_ip":/var/www/html
+          rsync -e "ssh -i ~/ssh_key -o StrictHostKeyChecking=no" -vzr ./public/ "$user"@"$target_ip":/var/www/html
         env:
           ssh_key: ${{ secrets.RMONAGHAN_GITHUB_ACTIONS_SSH }}
           user: ${{ secrets.RMONAGHAN_GITHUB_ACTIONS_USERNAME }}
