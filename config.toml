@@ -11,11 +11,11 @@ theme = "hugo-theme-nightfall"
   [[menu.header]]
     name = "blog"
     weight = 0
-    url = "blog"
+    url = "./blog"
   [[menu.header]]
     name = "about"
     weight = 1
-    url = "about"
+    url = "./about"
 
 [params]
 author = "Ryan Monaghan"
