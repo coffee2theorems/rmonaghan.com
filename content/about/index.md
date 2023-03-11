@@ -3,11 +3,8 @@ title: "About"
 date: 2023-01-31T20:03:05-06:00
 tags: []
 featured_image: ""
-description: ""
+description: "Learn a bit about Ryan"
 draft: false
-menu:
-  main:
-    weight: 1
 ---
 
 # Ryan Monaghan
