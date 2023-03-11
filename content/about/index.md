@@ -25,7 +25,7 @@ Experienced Software Engineer with a demonstrated history of working in the fina
     - Software Engineer
 
 
-- **Alkammi Technology** *Aug 2019 - Dec 2021*
+- **Alkami Technology** *Aug 2019 - Dec 2021*
     - Software Engineer
 
 
