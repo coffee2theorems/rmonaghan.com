@@ -20,7 +20,7 @@ theme = "hugo-theme-nightfall"
 [params]
 author = "Ryan Monaghan"
 user = "ryan"
-hostname = "rmonaghan.com"
+hostname = "rmonaghan"
 
 [[params.social]]
 key = 0
