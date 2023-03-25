@@ -1,6 +1,6 @@
 ---
 title: "C# Scripting"
-date: 2023-03-11T18:30:10-06:00
+date: 2023-03-24T18:30:10-06:00
 tags: ["2023","Coding", "CSharp", "TIL"]
 description: "A quick introduction to Scripting using C Sharp."
 draft: false
@@ -67,6 +67,49 @@ As with `#r` I found I benefited from restarting Omnisharp after adding other cl
 
 The file paths can be either relative or absolute, and according to the [documentation](https://github.com/dotnet-script/dotnet-script) on GitHub
 you can use URLs to run remote scripts. 
+
+## An Example Script
+After running 
+```bash
+dotnet script init
+```
+you should have a directory that looks something like
+
+```bash
+.
+├── .vscode
+│   └── launch.json
+├── main.csx
+└── omnisharp.json
+```
+
+In our main.csx we can add the following code:
+
+```csharp
+using System.Text.Json;
+using System.Net.Http;
+using System.Text.Json.Nodes;
+
+static readonly HttpClient client = new HttpClient();
+
+var request = new HttpRequestMessage
+{
+    Method = HttpMethod.Get,
+    RequestUri = new Uri("https://api.chucknorris.io/jokes/random?category=dev"),
+};
+using (var response = await client.SendAsync(request))
+{
+    response.EnsureSuccessStatusCode();
+    var body = await response.Content.ReadAsStringAsync();
+    JsonNode jsonResponse = JsonSerializer.Deserialize<JsonNode>(body);
+    Console.WriteLine((string)jsonResponse["value"]);
+}
+```
+
+To run this we just need to type:
+```bash
+dotnet script main.csx
+```
 
 ## Other Useful Things
 
