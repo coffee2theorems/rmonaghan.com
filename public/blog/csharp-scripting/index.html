@@ -1,69 +1,55 @@
-<!DOCTYPE html>
-<html lang="">
-
+<!doctype html><html lang>
 <head>
-    <title>
+<title>
 C# Scripting | Ryan Monaghan
 </title>
-
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<meta name="generator" content="Hugo 0.92.2" />
-
-
-<link rel="canonical" href="/blog/csharp-scripting/" >
-<link href="/sass/main.min.4e3efe637d21e3743f006dbceaa8d8f10952bb4f4d19989c58c5afb0fc120a52.css" rel="stylesheet">
-<link rel="me" href="https://mastodon.social/@rmonaghan">
-<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "981a6be43c8b48e6b72347bc9596ac3a"}'></script>
-
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=generator content="Hugo 0.92.2">
+<link rel=canonical href=/blog/csharp-scripting/>
+<link href=/sass/main.min.4e3efe637d21e3743f006dbceaa8d8f10952bb4f4d19989c58c5afb0fc120a52.css rel=stylesheet>
+<link rel=me href=https://mastodon.social/@rmonaghan>
+<script defer src=https://static.cloudflareinsights.com/beacon.min.js data-cf-beacon='{"token": "981a6be43c8b48e6b72347bc9596ac3a"}'></script>
 </head>
-
 <body>
-
-    <div class="flexWrapper">
-        <header class="headerWrapper">
-    <div class="header">
-        <div>
-            <a href="/">
-                <span class="terminal">ryan@rmonaghan ~ $</span>
-            </a>
-        </div>
-        <nav class="headerLinks">
-            <ul>
-                
-                <li>
-                    <a href="/about" title="" >
-                        ~/about</a>
-                </li>
-                
-                <li>
-                    <a href="/blog" title="" >
-                        ~/blog</a>
-                </li>
-                
-            </ul>
-        </nav>
-    </div>
+<div class=flexWrapper>
+<header class=headerWrapper>
+<div class=header>
+<div>
+<a href=/>
+<span class=terminal>ryan@rmonaghan ~ $</span>
+</a>
+</div>
+<nav class=headerLinks>
+<ul>
+<li>
+<a href=/about title>
+~/about</a>
+</li>
+<li>
+<a href=/blog title>
+~/blog</a>
+</li>
+</ul>
+</nav>
+</div>
 </header>
-
-        <div class="content">
-            <main class="main">
-                
-<div class="postWrapper">
-    <h1>C# Scripting</h1>
-    <div>
-        <h2 id="intro">Intro</h2>
+<div class=content>
+<main class=main>
+<div class=postWrapper>
+<h1>C# Scripting</h1>
+<div>
+<h2 id=intro>Intro</h2>
 <p>I came across C# scripting a few months ago as my team was trying to decide on a standard for how we wanted to share little scripts we had written to do
-small tasks. Traditionally I&rsquo;d use a tool like <a href="https://www.linqpad.net/">LinqPad</a> to accomplish this, but since we didn&rsquo;t want to buy a 
-Enterprise License we decided to try out C# Scripts.  I&rsquo;ve been surprised by how nice it is to have a small scratch pad to test out new ideas
+small tasks. Traditionally I&rsquo;d use a tool like <a href=https://www.linqpad.net/>LinqPad</a> to accomplish this, but since we didn&rsquo;t want to buy a
+Enterprise License we decided to try out C# Scripts. I&rsquo;ve been surprised by how nice it is to have a small scratch pad to test out new ideas
 or to rapidly prototype a solution. The following article is a quick getting-started guide and some notes for myself on common things I find myself
 searching for.</p>
-<h2 id="getting-started">Getting Started</h2>
-<p>Assuming you have <a href="https://dotnet.microsoft.com/en-us/download">.Net 6.0 or .Net 7.0</a> all you need to do to get started with scripting in C# is to open a terminal and type:</p>
-<pre tabindex="0"><code>dotnet tool install -g dotnet-script
+<h2 id=getting-started>Getting Started</h2>
+<p>Assuming you have <a href=https://dotnet.microsoft.com/en-us/download>.Net 6.0 or .Net 7.0</a> all you need to do to get started with scripting in C# is to open a terminal and type:</p>
+<pre tabindex=0><code>dotnet tool install -g dotnet-script
 </code></pre><p>Once you have it installed, create a folder and within that folder run the command</p>
-<pre tabindex="0"><code>dotnet script init
+<pre tabindex=0><code>dotnet script init
 </code></pre><p>This will do a few important things.</p>
 <ol>
 <li>Create a <code>main.csx</code> file, which will be where we start our journey.</li>
@@ -72,55 +58,55 @@ searching for.</p>
 </ol>
 <p>You can pass in a file name if you don&rsquo;t want to call your main file <code>main.csx</code>.</p>
 <p>To run the file it&rsquo;s as simple as:</p>
-<pre tabindex="0"><code>dotnet script main.csx
+<pre tabindex=0><code>dotnet script main.csx
 </code></pre><p>Or you can click on the debugging icon in VS Code and run it that way.</p>
-<h2 id="importing-other-files-and-nuget-packages">Importing other files and Nuget packages.</h2>
+<h2 id=importing-other-files-and-nuget-packages>Importing other files and Nuget packages.</h2>
 <p>To reference Nuget packages you just need to add a reference at the top of the file like so:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#960050;background-color:#1e0010">#</span>r <span style="color:#e6db74">&#34;nuget: CsvHelper 30.0.1&#34;</span>
-</code></pre></div><p>To get the correct spelling I go to <a href="https://www.nuget.org">https://www.nuget.org</a> and get the name and latest version.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csharp data-lang=csharp><span style=color:#960050;background-color:#1e0010>#</span>r <span style=color:#e6db74>&#34;nuget: CsvHelper 30.0.1&#34;</span>
+</code></pre></div><p>To get the correct spelling I go to <a href=https://www.nuget.org>https://www.nuget.org</a> and get the name and latest version.</p>
 <blockquote>
 <p><strong>Note:</strong> Omnisharp needs to be restarted after adding a new package reference. To do so use Ctrl+Shift+P and search for &ldquo;Omnisharp: Restart Omnisharp&rdquo;</p>
 </blockquote>
 <p>To add a reference to a local file we use the <code>#load</code> command. I found this particularly useful if I had a set of common classes that I&rsquo;d used over and over again.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#960050;background-color:#1e0010">#</span>load <span style="color:#e6db74">&#34;./StudentModel.csx&#34;</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csharp data-lang=csharp><span style=color:#960050;background-color:#1e0010>#</span>load <span style=color:#e6db74>&#34;./StudentModel.csx&#34;</span>
 </code></pre></div><p>You can also load .cs files.</p>
 <p>As with <code>#r</code> I found I benefited from restarting Omnisharp after adding other classes.</p>
-<p>The file paths can be either relative or absolute, and according to the <a href="https://github.com/dotnet-script/dotnet-script">documentation</a> on GitHub
+<p>The file paths can be either relative or absolute, and according to the <a href=https://github.com/dotnet-script/dotnet-script>documentation</a> on GitHub
 you can use URLs to run remote scripts.</p>
-<h2 id="an-example-script">An Example Script</h2>
+<h2 id=an-example-script>An Example Script</h2>
 <p>After running</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">dotnet script init
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>dotnet script init
 </code></pre></div><p>you should have a directory that looks something like</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">.
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>.
 ├── .vscode
 │   └── launch.json
 ├── main.csx
 └── omnisharp.json
 </code></pre></div><p>In our main.csx we can add the following code:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">using</span> System.Text.Json;
-<span style="color:#66d9ef">using</span> System.Net.Http;
-<span style="color:#66d9ef">using</span> System.Text.Json.Nodes;
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csharp data-lang=csharp><span style=color:#66d9ef>using</span> System.Text.Json;
+<span style=color:#66d9ef>using</span> System.Net.Http;
+<span style=color:#66d9ef>using</span> System.Text.Json.Nodes;
 
-<span style="color:#66d9ef">static</span> <span style="color:#66d9ef">readonly</span> HttpClient client = <span style="color:#66d9ef">new</span> HttpClient();
+<span style=color:#66d9ef>static</span> <span style=color:#66d9ef>readonly</span> HttpClient client = <span style=color:#66d9ef>new</span> HttpClient();
 
-<span style="color:#66d9ef">var</span> request = <span style="color:#66d9ef">new</span> HttpRequestMessage
+<span style=color:#66d9ef>var</span> request = <span style=color:#66d9ef>new</span> HttpRequestMessage
 {
     Method = HttpMethod.Get,
-    RequestUri = <span style="color:#66d9ef">new</span> Uri(<span style="color:#e6db74">&#34;https://api.chucknorris.io/jokes/random?category=dev&#34;</span>),
+    RequestUri = <span style=color:#66d9ef>new</span> Uri(<span style=color:#e6db74>&#34;https://api.chucknorris.io/jokes/random?category=dev&#34;</span>),
 };
-<span style="color:#66d9ef">using</span> (<span style="color:#66d9ef">var</span> response = <span style="color:#66d9ef">await</span> client.SendAsync(request))
+<span style=color:#66d9ef>using</span> (<span style=color:#66d9ef>var</span> response = <span style=color:#66d9ef>await</span> client.SendAsync(request))
 {
     response.EnsureSuccessStatusCode();
-    <span style="color:#66d9ef">var</span> body = <span style="color:#66d9ef">await</span> response.Content.ReadAsStringAsync();
+    <span style=color:#66d9ef>var</span> body = <span style=color:#66d9ef>await</span> response.Content.ReadAsStringAsync();
     JsonNode jsonResponse = JsonSerializer.Deserialize&lt;JsonNode&gt;(body);
-    Console.WriteLine((<span style="color:#66d9ef">string</span>)jsonResponse[<span style="color:#e6db74">&#34;value&#34;</span>]);
+    Console.WriteLine((<span style=color:#66d9ef>string</span>)jsonResponse[<span style=color:#e6db74>&#34;value&#34;</span>]);
 }
 </code></pre></div><p>To run this we just need to type:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">dotnet script main.csx
-</code></pre></div><h2 id="other-useful-things">Other Useful Things</h2>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>dotnet script main.csx
+</code></pre></div><h2 id=other-useful-things>Other Useful Things</h2>
 <ul>
 <li>
-<p>Just like the new Console App Template there is no top-level using statements or namespaces. I find that this makes things cleaner and easier to get started. Often times I&rsquo;m just wanting to 
+<p>Just like the new Console App Template there is no top-level using statements or namespaces. I find that this makes things cleaner and easier to get started. Often times I&rsquo;m just wanting to
 test a simple function or LINQ statement so it&rsquo;s nice to just be able to pull in the things I need and get straight to work.</p>
 </li>
 <li>
@@ -136,23 +122,17 @@ test a simple function or LINQ statement so it&rsquo;s nice to just be able to p
 <p>On Windows, you can use <code>dotnet script register</code> to execute the script from the shell!</p>
 </li>
 </ul>
-<h2 id="references">References</h2>
+<h2 id=references>References</h2>
 <ul>
-<li><a href="https://github.com/dotnet-script/dotnet-script">Dotnet Scripts on Github</a></li>
+<li><a href=https://github.com/dotnet-script/dotnet-script>Dotnet Scripts on Github</a></li>
 </ul>
-
-    </div>
 </div>
-
-            </main>
-        </div>
-
-
-        <footer class="footer">
-    © 2023 Ryan Monaghan
+</div>
+</main>
+</div>
+<footer class=footer>
+© 2023 Ryan Monaghan <a href=https://rmonaghan.com/rss.xml><img style=display:inline-block;height:1em;width:auto;transform:translate(0,.1em) src=/images/rss.png></a>
 </footer>
-    </div>
-
+</div>
 </body>
-
 </html>

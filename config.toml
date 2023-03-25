@@ -7,6 +7,11 @@ languageCode = 'en-us'
 title = 'Ryan Monaghan'
 theme = "hugo-theme-nightfall"
 
+[outputFormats]
+  [outputFormats.RSS]
+    mediatype = "application/rss"
+    baseName = "rss"
+
 [menu]
   [[menu.header]]
     name = "blog"
