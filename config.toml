@@ -33,11 +33,6 @@ name = "github"
 url = "https://github.com/coffee2theorems"
 
 [[params.social]]
-key = 1
-name = "mastodon"
-url = "https://mastodon.social/@rmonaghan"
-
-[[params.social]]
 key = 2
 name = "linkedin"
 url = "https://www.linkedin.com/in/ryan-k-monaghan/"
