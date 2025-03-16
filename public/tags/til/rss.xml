@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>TIL on </title>
-    <link>//localhost:1313/tags/til/</link>
+    <link>/tags/til/</link>
     <description>Recent content in TIL on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 24 Mar 2023 18:30:10 -0600</lastBuildDate><atom:link href="//localhost:1313/tags/til/rss.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 24 Mar 2023 18:30:10 -0600</lastBuildDate><atom:link href="/tags/til/rss.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>C# Scripting</title>
-      <link>//localhost:1313/blog/csharp-scripting/</link>
+      <link>/blog/csharp-scripting/</link>
       <pubDate>Fri, 24 Mar 2023 18:30:10 -0600</pubDate>
       
-      <guid>//localhost:1313/blog/csharp-scripting/</guid>
+      <guid>/blog/csharp-scripting/</guid>
       <description>&lt;h2 id=&#34;intro&#34;&gt;Intro&lt;/h2&gt;
 &lt;p&gt;I came across C# scripting a few months ago as my team was trying to decide on a standard for how we wanted to share little scripts we had written to do
 small tasks. Traditionally I&amp;rsquo;d use a tool like &lt;a href=&#34;https://www.linqpad.net/&#34;&gt;LinqPad&lt;/a&gt; to accomplish this, but since we didn&amp;rsquo;t want to buy a
@@ -39,8 +39,7 @@ searching for.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-csharp&#34; data-lang=&#34;csharp&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;#&lt;/span&gt;r &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;nuget: CsvHelper 30.0.1&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;To get the correct spelling I go to &lt;a href=&#34;https://www.nuget.org&#34;&gt;https://www.nuget.org&lt;/a&gt; and get the name and latest version.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; Omnisharp needs to be restarted after adding a new package reference. To do so use Ctrl+Shift+P and search for &amp;ldquo;Omnisharp: Restart Omnisharp&amp;rdquo;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; Omnisharp needs to be restarted after adding a new package reference. To do so use Ctrl+Shift+P and search for &amp;ldquo;Omnisharp: Restart Omnisharp&amp;rdquo;&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;To add a reference to a local file we use the &lt;code&gt;#load&lt;/code&gt; command. I found this particularly useful if I had a set of common classes that I&amp;rsquo;d used over and over again.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-csharp&#34; data-lang=&#34;csharp&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;#&lt;/span&gt;load &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;./StudentModel.csx&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You can also load .cs files.&lt;/p&gt;
